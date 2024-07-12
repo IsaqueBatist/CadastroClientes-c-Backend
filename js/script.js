@@ -30,17 +30,17 @@ function putStudent(student) {
 
 form.addEventListener("submit", function(event) {
   event.preventDefault()
+  document.getElementById('bodytabel').innerHTML = ''
   
   let newAluno = {
-    id: alunos.length + 1,
     name: document.getElementById('inputName3').value,
     email: document.getElementById('inputEmail3').value,
     phone: document.getElementById('inputphone3').value,
-    course: document.getElementById('languages').value,
-    period: document.querySelector('input[name=exampleRadios]:checked').value
+    idCourse: document.getElementById('languages').value,
+    turn: document.querySelector('input[name=exampleRadios]:checked').value
   }
-  alunos.push(newAluno)
-  putStudents(newAluno)
+  axios.post('http://localhost:8080/students', newAluno)
+  getStudents()
   form.reset()
 })
 
