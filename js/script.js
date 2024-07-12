@@ -1,33 +1,30 @@
 $("#inputphone3").mask('(00) 00000-0000')
-let alunos = []
-const courses = []
+let courses = []
 const form = document.getElementById('registerForm')
 
-function loadStudents(studentsArray){
-  studentsArray.map((student) => putStudents(student))
-}
 async function getStudents(){
   const {data} = await axios.get("http://localhost:8080/students")
-  console.log(data)
+  await getCourses()
+  data.map((student) => putStudent(student))
 }
 async function getCourses(){
   const {data} = await axios.get("http://localhost:8080/courses")
-  data.map((c) => document.getElementById('languages').innerHTML += `<option value=${c.id}>${c.name}</option>`)
+  courses = data
+  courses.map((c) => document.getElementById('languages').innerHTML += `<option value=${c.id}>${c.name}</option>`)
 }
-getCourses()
-function putStudents(student) {
+function putStudent(student) {
   const body = document.getElementById('bodytabel')
-  const {course} = courses[student.course]
-
-    body.innerHTML+=`
-    <tr>
-      <th scope="row">${student.id}</th>
-      <td>${student.name}</td>
+  const {name} = courses[student.idCourse-1]
+  
+  body.innerHTML+=`
+  <tr>
+  <th scope="row">${student.id}</th>
+  <td>${student.name}</td>
       <td class="d-none d-md-table-cell">${student.email}</td>
       <td class="d-none d-md-table-cell">${student.phone}</td>
-      <td class="d-none d-md-table-cell">${course}</td>
-      <td class="d-none d-md-table-cell">${student.period}</td>
-    </tr>
+      <td class="d-none d-md-table-cell">${name}</td>
+      <td class="d-none d-md-table-cell">${student.turn}</td>
+      </tr>
     `
 }
 
@@ -47,4 +44,4 @@ form.addEventListener("submit", function(event) {
   form.reset()
 })
 
-loadStudents(alunos)
+getStudents()
