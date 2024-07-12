@@ -1,28 +1,20 @@
 $("#inputphone3").mask('(00) 00000-0000')
-let alunos = [
-  {
-    id: 1,
-    name: 'Pedro Antonio',
-    email: 'pedro@gmail.com',
-    phone: '(15) 99999-9999',
-    course: 1,
-    period: 'Tarde',
-  }
-]
-
-
-const courses = [
-  {id: 1, course: 'Java'},
-  {id: 2, course: 'Python'},
-  {id: 3, course: 'TypeScript'},
-  {id: 4, course: 'Angular'},
-  {id: 5, course: 'React'}
-]
+let alunos = []
+const courses = []
+const form = document.getElementById('registerForm')
 
 function loadStudents(studentsArray){
   studentsArray.map((student) => putStudents(student))
 }
-
+async function getStudents(){
+  const {data} = await axios.get("http://localhost:8080/students")
+  console.log(data)
+}
+async function getCourses(){
+  const {data} = await axios.get("http://localhost:8080/courses")
+  data.map((c) => document.getElementById('languages').innerHTML += `<option value=${c.id}>${c.name}</option>`)
+}
+getCourses()
 function putStudents(student) {
   const body = document.getElementById('bodytabel')
   const {course} = courses[student.course]
@@ -38,7 +30,6 @@ function putStudents(student) {
     </tr>
     `
 }
-const form = document.getElementById('registerForm')
 
 form.addEventListener("submit", function(event) {
   event.preventDefault()
