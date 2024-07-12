@@ -2,70 +2,22 @@ package com.cadastro.backend.models;
 
 public class Student {
   private int id;
-  private String firstName;
-  private String lastName;
-  private String adress;
-  private String cep;
-  private String neighborhood;
-  private String city;
-  private String stat;
+  private String name;
+  private String email;
+  private String phone;
+  private int idCourse;
+  private String turn;
 
   public Student() {
   }
 
-  public Student(int id, String firstName, String lastName, String adress, String cep, String neighborhood, String city,
-      String stat) {
+  public Student(int id, String name, String email, String phone, int idCourse, String turn) {
     this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.adress = adress;
-    this.cep = cep;
-    this.neighborhood = neighborhood;
-    this.city = city;
-    this.stat = stat;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-  public String getLastName() {
-    return lastName;
-  }
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-  public String getAdress() {
-    return adress;
-  }
-  public void setAdress(String adress) {
-    this.adress = adress;
-  }
-  public String getCep() {
-    return cep;
-  }
-  public void setCep(String cep) {
-    this.cep = cep;
-  }
-  public String getNeighborhood() {
-    return neighborhood;
-  }
-  public void setNeighborhood(String neighborhood) {
-    this.neighborhood = neighborhood;
-  }
-  public String getCity() {
-    return city;
-  }
-  public void setCity(String city) {
-    this.city = city;
-  }
-  public String getStat() {
-    return stat;
-  }
-  public void setStat(String stat) {
-    this.stat = stat;
+    this.name = name;
+    this.email = email;
+    this.phone = phone;
+    this.idCourse = idCourse;
+    this.turn = turn;
   }
 
   public int getId() {
@@ -74,6 +26,46 @@ public class Student {
 
   public void setId(int id) {
     this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public int getIdCourse() {
+    return idCourse;
+  }
+
+  public void setIdCourse(int idCourse) {
+    this.idCourse = idCourse;
+  }
+
+  public String getTurn() {
+    return turn;
+  }
+
+  public void setTurn(String turn) {
+    this.turn = turn;
   }
 
   

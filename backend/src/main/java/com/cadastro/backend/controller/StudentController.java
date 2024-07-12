@@ -18,7 +18,7 @@ public class StudentController {
 
   // private List<Student> students = new ArrayList<>();
   private List<Student> students = Arrays.asList(
-      new Student(1, "Glauco", "Todesco", "Tua Leite", "13311-215", "Centro", "Sorocaba", "SP"));
+      new Student(1, "Pedro Antonio", "pedro@gmail.com", "(11)96399-5039", 1, "Tarde"));
 
   @GetMapping("students/{id}")
   public ResponseEntity<Student> getStudent(@PathVariable("id") int id) {
