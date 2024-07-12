@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Scripts-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+  <!--BootStrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Cadastro Alunos</title>
+</head>
+<body>
+  
+    <header class="header bg-light text-center">
+      <h1 class="display-4">Cadastro de alunos</h1>
+    </header>
+
+  <main>
+    <div class="container">
+      <section>
+        <h2 class="display-6">Formulário de Cadastro:</h2>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+              <form id="registerForm">             
+                <div class="row mb-3">
+                  <label for="inputName3" class="col-sm-2 col-form-label">Nome</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputName3" required>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" required>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="languages" class="col-sm-2 col-form-label">Cursos</label>
+                  <div class="col-sm-4">
+                    <select class="form-select" aria-label="Default select example" id="languages">
+                      <option value="" selected>Escolha:</option>
+                      <option value="1">Java</option>
+                      <option value="2">Python</option>
+                      <option value="3">TypeScript</option>
+                      <option value="4">Angular</option>
+                      <option value="5">React</option>
+                    </select>
+                  </div>
+                  <label for="inputphone3" class="col-sm-2 col-form-label">Telefone</label>
+                  <div class="col-sm-4">
+                    <input type="phone" class="form-control" id="inputphone3" required>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">Turno</label>
+                  <div class="col-sm-10">
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="morningRadio" value="Manhã" checked>
+                      <label class="form-check-label" for="morningRadio">
+                        Manhã
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="afternoonRadio" value="Tarde" checked>
+                      <label class="form-check-label" for="afternoonRadio">
+                        Tarde
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="eveningRadio" value="Noite" checked>
+                      <label class="form-check-label" for="eveningRadio">
+                        Noite
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+      </section>
+      <hr>
+      <section>
+        <h2 class="display-6">Alunos Cadastrados:</h2>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col" class="d-none d-md-table-cell">Email</th>
+                  <th scope="col" class="d-none d-md-table-cell">Telefone</th>
+                  <th scope="col" class="d-none d-md-table-cell">Curso</th>
+                  <th scope="col" class="d-none d-md-table-cell">Turno</th>
+                </tr>
+              </thead>
+              <tbody id="bodytabel">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+  <!--Scripts-->
+  <script src="../js/script.js"></script>
+  <!--BootStrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
